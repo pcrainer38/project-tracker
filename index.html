@@ -19,26 +19,77 @@
 
 </head>
 <body>
-    <header>
+    <header class="p-5 mb-4 bg-dark text-light text-center header">
         <h1>Project Tracker</h1>
         <h2>Date and Time:</h2>
         <p id="time-display"></p>
     </header>
-
-    <div class="card" style="width: 18rem;">
-        <div class="card-header">
-          Enter your project name, type and due date.
-
+    <main>
+      <div class="container d-flex ">
+        <div class="card " style="width: 18rem;">
+          <div class="row ">
+            <div class="card-body col-12 col-md-4  m-4 ">
+              <h5 class="card-title">Instructions</h5>
+              <h6 class="card-subtitle mb-2 text-muted"></h6>
+              <p class="card-text">Click the button and enter your project name, project type and due date.</p>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Click Me!
+              </button>
+            </div>
+          </div>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Project Name</li>
-          <li class="list-group-item">Project Type</li>
-          <li class="list-group-item">Due Date</li>
-        </ul>
-        <button>Press Enter</button>
-      </div>
+         <div class="col-12 col-md-8  m-4"> 
+              <table class="table table-striped">
+                <thead>
+                  <th>Project Name</th>
+                  <th>Project Type</th>
+                  <th>Due Date</th>
+                  <th>Complete</th>
+                </thead>
+                <tbody id="project-display">
+                  
+                </tbody>
 
-      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+              </table>
+            
+          </div>      
+      </div>
+<!-- modal for adding new project -->
+      <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add a new project</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Project Name</span>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" aria-label="Text input with dropdown button">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Web Application (Front End)</a></li>
+                <li><a class="dropdown-item" href="#">Web Application (Back End)</a></li>
+                <li><a class="dropdown-item" href="#">Web Application (Full Stack)</a></li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+ 
+    </main>
+      
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
       
       <script
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
